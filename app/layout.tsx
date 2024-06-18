@@ -31,7 +31,7 @@ export default function RootLayout({
         />
 
         <script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
-        <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
+        <script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
       </head>
       <body className={inter.className}>{children}</body>
     </html>

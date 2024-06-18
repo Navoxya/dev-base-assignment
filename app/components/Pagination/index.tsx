@@ -6,9 +6,10 @@ interface pagination {
     currentPage: number;
     totalPages: number;
     onPageChange: (value: number) => void;
+    key?: number;
 }
 
-const Pagination = ({ currentPage, totalPages, onPageChange }: pagination) => {
+const Pagination = ({ currentPage, totalPages, onPageChange, key }: pagination) => {
 
     const pages = [];
 
