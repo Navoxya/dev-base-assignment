@@ -2,6 +2,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+
+//pagination interface
 interface pagination {
     currentPage: number;
     totalPages: number;

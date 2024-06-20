@@ -21,6 +21,8 @@ import BookForm from "./components/Forms/bookForm";
 import { GetAllBooks } from "@/app/services/Get"
 import Pagination from "./components/Pagination";
 
+
+//book interface
 interface Book {
   id: string;
   title: string;
@@ -56,6 +58,7 @@ export default function Home() {
   //fetching books data from api
   const getAllBooks = () => {
 
+    // api call
     GetAllBooks({
       search: search,
       sortField: filter,
@@ -78,10 +81,7 @@ export default function Home() {
         setisLoading(false);
 
 
-        // setOpenToast(true);
-        // setColor(COLORS.Orange);
-        // setAlertClass("error");
-        // setMsg(error.response.data.message);
+       
       });
 
   }
@@ -140,34 +140,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-              {/* <div className="block w-full overflow-hidden md:w-max">
-                <nav>
-                  <ul role="tablist" className="relative flex flex-row p-1 rounded-lg bg-blue-gray-50 bg-opacity-60">
-                    <li role="tab"
-                      className="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
-                      data-value="all">
-                      <div className="z-20 text-inherit">
-                        &nbsp;&nbsp;All&nbsp;&nbsp;
-                      </div>
-                      <div className="absolute inset-0 z-10 h-full bg-white rounded-md shadow"></div>
-                    </li>
-                    <li role="tab"
-                      className="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
-                      data-value="monitored">
-                      <div className="z-20 text-inherit">
-                        &nbsp;&nbsp;Monitored&nbsp;&nbsp;
-                      </div>
-                    </li>
-                    <li role="tab"
-                      className="relative flex items-center justify-center w-full h-full px-2 py-1 font-sans text-base antialiased font-normal leading-relaxed text-center bg-transparent cursor-pointer select-none text-blue-gray-900"
-                      data-value="unmonitored">
-                      <div className="z-20 text-inherit">
-                        &nbsp;&nbsp;Unmonitored&nbsp;&nbsp;
-                      </div>
-                    </li>
-                  </ul>
-                </nav>
-              </div> */}
+
               <div className="w-full md:w-72">
                 <div className="relative h-10 w-full min-w-[200px]">
                   <div className="absolute grid w-5 h-5 top-2/4 right-3 -translate-y-2/4 place-items-center text-blue-gray-500">
@@ -272,12 +245,7 @@ export default function Home() {
                       </svg>
                     </p>
                   </th>
-                  {/* <th
-                    className="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
-                    <p
-                      className="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                    </p>
-                  </th> */}
+
                 </tr>
               </thead>
               <tbody>
@@ -375,15 +343,19 @@ export default function Home() {
             </table>
           </div>
 
+          {/* pagination ui */}
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
           />
+          {/* pagination ui */}
 
         </div>
 
       </div>
+      {/* Table UI */}
+
 
     </>
 
