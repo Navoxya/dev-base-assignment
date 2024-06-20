@@ -56,11 +56,11 @@ export default function BookForm({ open, setOpen }: dataFormProps) {
 
 
     //save book function
-
     const saveBook = (e: { preventDefault: () => void; }) => {
 
         e.preventDefault()
 
+        //form validations
         if (!title) {
             seterrtitle(true);
         }
@@ -80,26 +80,38 @@ export default function BookForm({ open, setOpen }: dataFormProps) {
         let obj = {
             title: title,
             author: author,
-            publisher: author,
+            publisher: publisher,
             pages: pages
         }
 
         console.log(">>obj", obj)
 
-        AddBook(obj)
-            .then((res) => {
-                console.log("res>>>", res);
-                setOpen(false);
 
-                setmsg("Book successfully added")
-                setopenToast(true);
+        if (
+            title &&
+            author &&
+            publisher &&
+            pages
+        ) {
 
-            })
-            .catch((error) => {
-                console.log("Error", error);
+            //add books api call
+            AddBook(obj)
+                .then((res) => {
+                    console.log("res>>>", res);
+                    setOpen(false);
+
+                    setmsg("Book successfully added")
+                    setopenToast(true);
+
+                })
+                .catch((error) => {
+                    console.log("Error", error);
 
 
-            });
+                });
+
+        }
+
 
 
 
