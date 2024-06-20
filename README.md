@@ -1,6 +1,7 @@
 ## Getting Started
 
-First, clone the project into the local machine
+First, clone the project into the local space
+`git clone https://github.com/Navoxya/dev-base-assignment.git`
 
 Second, install node modules
 
