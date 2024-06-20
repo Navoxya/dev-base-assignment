@@ -30,5 +30,7 @@ import book.json into Mockoon and start the environment
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+The app is also deployed on [https://dev-base-assignment.vercel.app/](Vercel).
+
 
 
